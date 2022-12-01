@@ -12,19 +12,23 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <!-- JavaScript Bundle with Popper -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">The Gamer's Hub</a>
+        <a class="navbar-brand" href="#"><i class="bi bi-controller"></i>
+          The Gamer's Hub</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -38,17 +42,32 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
-            <a class="nav-link" href="/signup">Sign up</a>
-            <a class="nav-link" href="/login">Login</a>
-            <a class="nav-link" href="/profile">Profile</a>
+            <a class="nav-link" aria-current="page" href="/">Home</a>
             <a class="nav-link" href="/games">List of games</a>
+            <a class="nav-link" href="/profile">Profile</a>
           </div>
+        </div>
+        <div>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="btn btn-info me-1 signup-btn" href="/signup">Signup</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-info me-1 login-btn" href="/login">Login</a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
 
     {{{body}}}
+
+    <footer>
+      <p>Made with ♡ by
+        <a href="https://github.com/MesquitaGit">João</a>
+        &
+        <a href="https://github.com/agrandemartasan">Marta</a>.</p>
+    </footer>
 
     <script src="/js/script.js"></script>
   </body>

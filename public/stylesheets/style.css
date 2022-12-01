@@ -1,11 +1,118 @@
-body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Exo+2:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Defining color scheme */
+:root {
+  --color-primary: #3B2967;
+  --color-secondary: #101131;
+  --color-accent: #9CBAD7;
+  --color-accent2: #cfe3f5;
+  --color4: #363989;
+  --color5: #2A3382;
 }
 
-a {
-  color: #00b7ff;
+body, html {
+  font-family: "Exo 2", sans-serif;
+  height: 100%;
 }
 
-h1 {
-  color: 15px;
+nav {
+  background-color: var(--color-secondary);
+}
+
+.nav-link {
+  color: var(--color-accent2);
+}
+
+.navbar-brand {
+  color: var(--color-accent2);
+} 
+
+.navbar-brand:hover {
+  color: var(--color-accent2);
+} 
+
+.nav-link:hover {
+  color: var(--color-accent2);
+}
+
+.signup-btn {
+  color: var(--color-accent2);
+}
+
+.signup-btn:hover {
+  color: var(--color-accent2);
+}
+
+.login-btn {
+  color: var(--color-accent2);
+}
+
+.login-btn:hover {
+  color: var(--color-accent2);
+}
+
+
+/* The hero image */
+.hero-image {
+/* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/3.jpg");
+
+/* Set a specific height */
+height: 80vh;
+
+/* Position and center the image to scale nicely on all screens */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+text-align: center;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: var(--color-accent2);
+}
+
+.hero-text button {
+  padding: 3% 5%;
+  margin-top: 10%;
+  background-color: var(--color-primary);
+  color: var(--color-accent2);
+  border-radius: 15%;
+}
+
+.intro {
+  background-color: var(--color-secondary);
+  color: var(--color-accent2);
+  padding: 10% 8%;
+}
+
+.intro .img-container img {
+  width: 100%
+}
+
+.intro .row {
+  gap:5%;
+}
+
+.intro .random-games-container {
+  display:flex
+}
+
+footer {
+  background-color: var(--color4);
+}
+footer p {
+  text-align: center;
+  color: var(--color-accent2);
+  margin-bottom: 0;
+  padding: 1%;
+}
+
+footer p a {
+  color: var(--color-accent2);
 }
