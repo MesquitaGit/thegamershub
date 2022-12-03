@@ -139,8 +139,11 @@ footer p a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 86vh;
-  background-color: var(--color-accent2);
+  height: 84.6vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/1.jpg);
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: center;
 }
 
 .form {
