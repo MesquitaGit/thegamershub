@@ -89,6 +89,8 @@ color: var(--color-accent2);
   background-color: var(--color-secondary);
   color: var(--color-accent2);
   padding: 10% 8%;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .intro .img-container img {
@@ -100,7 +102,7 @@ color: var(--color-accent2);
 }
 
 .intro .random-games-container {
-  display:flex
+  display: flex;
 }
 
 footer {

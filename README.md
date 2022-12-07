@@ -13,6 +13,7 @@ While logged in, if you are normal user:
 - Access and edit your profile
 
 #### <ins> Optional feature </ins>
+
 If you sign up as a game developer you get the features of a normal user, plus you will also be able to:
 
 - Add games to the database
@@ -38,22 +39,23 @@ If you sign up as a game developer you get the features of a normal user, plus y
 
 ## Server Routes (Back-end)
 
-| Method        | Route         | Description| Request - Body |
-| ------------- |:-------------:| -----:|---:|
-| GET           | /             | Main page route. Renders home index view.| 
-| GET      | /login      |   Renders login form view.    |
-| POST  | /login      |    Sends Login form data to the server.      | { email, password }
-| GET           | /signup             | 	Renders signup form view.| 
-| POST           | /signup             | Sends Sign Up info to the server and creates user in the DB.| { email, password } 
-| GET           | /private/edit-profile             | Private route. Renders edit-profile form view.
-| PUT           | /private/edit-profile             | Private route. Sends edit-profile info to server and updates user in DB.| { email, password, [firstName], [lastName], [imageUrl] } 
-| GET           | /private/favorites           | Private route. Render the favorites view. 
-| POST           | /private/favorites             | Private route. Adds a new favorite for the current user.|{ name, genre, description, } 
-| DELETE           | /private/favorites/:gameId             | Private route. Deletes the existing favorite from the current user.
-| GET           | /games             | Renders games-list view. 
-| GET           | /games/details/:id             | Renders game-details view for the particular game.
+| Method |           Route            |                                                              Description |                                           Request - Body |
+| ------ | :------------------------: | -----------------------------------------------------------------------: | -------------------------------------------------------: |
+| GET    |             /              |                                Main page route. Renders home index view. |
+| GET    |           /login           |                                                 Renders login form view. |
+| POST   |           /login           |                                     Sends Login form data to the server. |                                      { email, password } |
+| GET    |          /signup           |                                                Renders signup form view. |
+| POST   |          /signup           |             Sends Sign Up info to the server and creates user in the DB. |                                      { email, password } |
+| GET    |   /private/edit-profile    |                           Private route. Renders edit-profile form view. |
+| PUT    |   /private/edit-profile    | Private route. Sends edit-profile info to server and updates user in DB. | { email, password, [firstName], [lastName], [imageUrl] } |
+| GET    |     /private/favorites     |                                Private route. Render the favorites view. |
+| POST   |     /private/favorites     |                 Private route. Adds a new favorite for the current user. |                            { name, genre, description, } |
+| DELETE | /private/favorites/:gameId |      Private route. Deletes the existing favorite from the current user. |
+| GET    |           /games           |                                                 Renders games-list view. |
+| GET    |     /games/details/:id     |                       Renders game-details view for the particular game. |
 
 ## MODELS
+
 ### User model
 
 ```
@@ -74,7 +76,7 @@ If you sign up as a game developer you get the features of a normal user, plus y
 
 ## API
 
-https://api-docs.igdb.com/#about
+https://rawg.io/apidocs
 
 ## Packages
 
@@ -91,5 +93,3 @@ https://api-docs.igdb.com/#about
 ## Github Repository
 
 https://github.com/MesquitaGit/thegamershub
-
-
