@@ -1,5 +1,6 @@
-{{#if username}}
-<h1>Welcome {{username}}</h1>
+{{#if currentUser}}
+  <h1>Welcome {{currentUser.username}}</h1>
 {{else}}
-<p>Not logged in yet.</p>
+  {{projectName}}
+  <p>Not logged in yet.</p>
 {{/if}}

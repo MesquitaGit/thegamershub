@@ -141,6 +141,15 @@ router.post("/login", isLoggedOut, (req, res, next) => {
     .catch((err) => next(err));
 });
 
+router.get("/profile", isLoggedIn, (req, res, next) => {
+  try {
+    console.log(res.locals);
+    res.render("auth/profile");
+  } catch (error) {
+    next(error);
+  }
+});
+
 // GET /auth/logout
 router.get("/logout", isLoggedIn, (req, res) => {
   req.session.destroy((err) => {

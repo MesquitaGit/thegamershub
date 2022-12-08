@@ -5,6 +5,7 @@ class ApiService {
   constructor() {
     this.api = axios.create({
       baseURL: "https://api.rawg.io/api",
+      headers: { "accept-encoding": "*" },
       params: {
         key,
       },

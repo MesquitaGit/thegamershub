@@ -29,6 +29,8 @@ const MongoStore = require("connect-mongo");
 const MONGO_URI =
   process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/thegamershub";
 
+const setUser = require("../middleware/setUser");
+
 // Middleware configuration
 module.exports = (app) => {
   // In development environment the app logs
@@ -54,7 +56,7 @@ module.exports = (app) => {
   // ℹ️ Middleware that adds a "req.session" information and later to check that you are who you say you are 😅
   app.use(
     session({
-      secret: process.env.SESSION_SECRET || "super hyper secret key",
+      secret: process.env.SESSION_SECRET,
       resave: false,
       saveUninitialized: false,
       store: MongoStore.create({
@@ -62,4 +64,6 @@ module.exports = (app) => {
       }),
     })
   );
+
+  app.use(setUser);
 };
