@@ -34,9 +34,10 @@ function findPageNum(link) {
 router.get("/games/:pageNumber", async (req, res, next) => {
   const { pageNumber } = req.params;
   try {
+    const nextPage = Number(pageNumber) + 1;
+    const previousPage = Number(pageNumber) - 1 || 1;
     const allGames = await apiService.getAllGames(pageNumber);
-    let nextPage = findPageNum(allGames.data.next);
-    let previousPage = findPageNum(allGames.data.previous);
+    console.log(allGames.data.results);
     res.render("games", {
       games: allGames.data.results,
       nextPage,
@@ -47,11 +48,11 @@ router.get("/games/:pageNumber", async (req, res, next) => {
   }
 });
 
-router.get("/games/game-details/:gameId", async (req, res, next) => {
-  const { gameId } = req.params;
-
+router.get("/games/game-details/:id", async (req, res, next) => {
+  const { id } = req.params;
+  console.log(id);
   try {
-    const singleGame = await apiService.getSingleGame(gameId);
+    const singleGame = await apiService.getSingleGame(id);
     console.log("game:", singleGame.data);
     res.render("game-details", { game: singleGame.data });
   } catch (error) {
