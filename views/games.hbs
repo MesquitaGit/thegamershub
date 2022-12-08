@@ -1,3 +1,21 @@
 <div class="container-fluid">
   <h1>THERE SHOULD BE A LIST OF GAMES HERE</h1>
 </div>
+
+<section class="container-fluid games-list">
+  {{#each games}}
+    <div class="game-card">
+      <h3>{{name}}</h3>
+      <img src="{{background_image}}" alt="{{name}}" width="200" />
+    </div>
+  {{/each}}
+</section>
+
+<div>
+  {{#if previousPage}}
+    <a href="{{previousPage}}">Previous Page</a>
+  {{/if}}
+  {{#if nextPage}}
+    <a href="{{nextPage}}">Next Page</a>
+  {{/if}}
+</div>

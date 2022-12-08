@@ -221,3 +221,16 @@ footer p a {
 }
 
 
+/*games list styling*/
+
+.games-list {
+  display: flex;
+  gap: 1%;
+  flex-wrap: wrap;
+}
+
+.game-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+}

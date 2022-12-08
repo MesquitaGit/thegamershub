@@ -11,11 +11,19 @@ class ApiService {
     });
   }
 
-  getAllGames = () => {
+  getAllGames = (pageNumber) => {
+    if (!pageNumber) {
+      return this.api.get("/games", {
+        params: {
+          key,
+        },
+      });
+    }
+
     return this.api.get("/games", {
       params: {
         key,
-        //search: "Stardew",
+        page: pageNumber,
       },
     });
   };
