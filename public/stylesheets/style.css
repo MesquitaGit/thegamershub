@@ -227,10 +227,12 @@ footer p a {
   display: flex;
   gap: 1%;
   flex-wrap: wrap;
+  background-color: var(--color-primary);
 }
 
 .game-card {
   display: flex;
   flex-direction: column;
   border: 1px solid black;
+  color: var(--color-accent2);
 }

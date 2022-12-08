@@ -47,7 +47,7 @@ router.get("/games/:pageNumber", async (req, res, next) => {
   }
 });
 
-router.get("/games/:gameId", async (req, res, next) => {
+router.get("/games/game-details/:gameId", async (req, res, next) => {
   const { gameId } = req.params;
 
   try {
