@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const ApiService = require("../services/api.service");
 const apiService = new ApiService();
+const User = require("../models/User.model");
+const Favorite = require("../models/Favorite.model");
 
 router.get("/search", async (req, res, next) => {
   try {
@@ -65,6 +67,32 @@ router.get("/games/game-details/:id", async (req, res, next) => {
     const singleGame = await apiService.getSingleGame(id);
     console.log("game:", singleGame.data);
     res.render("game-details", { game: singleGame.data });
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.post("/favorites", async (req, res, next) => {
+  try {
+    const newFavorite = await Favorite.create(req.body);
+    await User.findByIdAndUpdate(req.session.currentUser._id, {
+      $push: { favorites: newFavorite._id },
+    });
+
+    res.redirect("/favorites");
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get("/favorites", async (req, res, next) => {
+  try {
+    const user = await User.findById(req.session.currentUser._id).populate(
+      "favorites"
+    );
+    const { favorites } = user;
+    console.log(favorites);
+    res.render("favorites", { favorites });
   } catch (error) {
     next(error);
   }
