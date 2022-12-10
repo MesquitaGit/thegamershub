@@ -150,6 +150,26 @@ router.get("/profile", isLoggedIn, (req, res, next) => {
   }
 });
 
+router.get("/profile/edit", isLoggedIn, (req, res, next) => {
+  try {
+    res.render("auth/edit-profile");
+  } catch (error) {
+    ñext(error);
+  }
+});
+
+router.post("/profile/:userId/edit", isLoggedIn, async (req, res, next) => {
+  try {
+    const { userId } = req.params;
+    const updatedUser = req.body;
+    const newUser = await User.findByIdAndUpdate(userId, updatedUser);
+    req.session.currentUser = newUser;
+    res.redirect("/profile");
+  } catch (error) {
+    next(error);
+  }
+});
+
 // GET /auth/logout
 router.post("/logout", isLoggedIn, (req, res) => {
   req.session.destroy((err) => {

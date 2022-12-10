@@ -1,0 +1,19 @@
+<h2>Edit your profile</h2>
+
+<form
+  action="/profile/{{currentUser._id}}/edit"
+  method="post"
+  nctype="multipart/form-data"
+>
+  <label>
+    Username
+    <input type="text" name="username" value="{{currentUser.username}}" />
+  </label>
+  <br />
+  <label>
+    Profile picture
+    <input type="file" name="picture_url" />
+  </label>
+  <br />
+  <button type="submit">Edit</button>
+</form>
