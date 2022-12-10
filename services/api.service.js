@@ -32,6 +32,15 @@ class ApiService {
   getSingleGame = (gameId) => {
     return this.api.get(`/games/${gameId}`);
   };
+
+  searchGame = () => {
+    return this.api.get("/games", {
+      params: {
+        key,
+        search: input,
+      },
+    });
+  };
 }
 
 module.exports = ApiService;

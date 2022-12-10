@@ -20,6 +20,11 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    picture_url: {
+      type: String,
+      default: "",
+    },
+    //favorites: []
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

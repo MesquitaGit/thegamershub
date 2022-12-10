@@ -3,11 +3,17 @@ const router = express.Router();
 const ApiService = require("../services/api.service");
 const apiService = new ApiService();
 
-/* GET home page */
+router.get("/search", async (req, res, next) => {
+  try {
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.get("/games", async (req, res, next) => {
   try {
     const allGames = await apiService.getAllGames();
-    console.log("All games:", allGames.data);
+    //console.log("All games:", allGames.data);
     res.render("games", {
       games: allGames.data.results,
       nextPage: 2,
@@ -37,7 +43,7 @@ router.get("/games/:pageNumber", async (req, res, next) => {
     const nextPage = Number(pageNumber) + 1;
     const previousPage = Number(pageNumber) - 1 || 1;
     const allGames = await apiService.getAllGames(pageNumber);
-    console.log(allGames.data.results);
+    //console.log(allGames.data.results);
     res.render("games", {
       games: allGames.data.results,
       nextPage,
