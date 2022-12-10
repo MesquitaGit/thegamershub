@@ -220,3 +220,30 @@ footer p a {
   border: 1px solid black;
   color: var(--color-accent2);
 }
+
+.star {
+  position: relative;
+  display: inline-block;
+  color: #ffc107;
+  font-size: 2em;
+}
+
+.star::before,
+.star::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  background: currentColor;
+  border-radius: 50%;
+}
+
+.star::before {
+  transform: rotate(144deg);
+}
+
+.star::after {
+  transform: rotate(-144deg);
+}
