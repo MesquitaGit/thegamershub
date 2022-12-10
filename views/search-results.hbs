@@ -1,0 +1,10 @@
+<section class="container-fluid games-list">
+  {{#each games}}
+    <div class="game-card">
+      <h5>{{name}}</h5>
+      <img src="{{background_image}}" alt="{{name}}" width="200" />
+      <a href="/games/game-details/{{id}}">See Details</a>
+      <a href="#" class="star">Favourite</a>
+    </div>
+  {{/each}}
+</section>

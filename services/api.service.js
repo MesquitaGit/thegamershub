@@ -33,7 +33,7 @@ class ApiService {
     return this.api.get(`/games/${gameId}`);
   };
 
-  searchGame = () => {
+  searchGame = (input) => {
     return this.api.get("/games", {
       params: {
         key,

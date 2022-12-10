@@ -5,6 +5,10 @@ const apiService = new ApiService();
 
 router.get("/search", async (req, res, next) => {
   try {
+    const { game } = req.query;
+    const searchResults = await apiService.searchGame(game);
+    //console.log(searchResults.data.results);
+    res.render("search-results", { games: searchResults.data.results });
   } catch (error) {
     next(error);
   }
