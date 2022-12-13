@@ -4,6 +4,11 @@
       <h5>{{name}}</h5>
       <img src="{{backgroundImage}}" alt="{{name}}" width="200" />
       <a href="/games/game-details/{{apiId}}">See Details</a>
+      <div>
+        <form action="/favorites/{{id}}/delete" method="post">
+          <button type="submit">Remove from favorites</button>
+        </form>
+      </div>
     </div>
   {{/each}}
 </section>

@@ -75,12 +75,27 @@ router.get("/games/game-details/:id", async (req, res, next) => {
 
 router.post("/favorites", isLoggedIn, async (req, res, next) => {
   try {
-    const newFavorite = await Favorite.create(req.body);
-    await User.findByIdAndUpdate(req.session.currentUser._id, {
-      $push: { favorites: newFavorite._id },
+    const { name, apiId, background_image } = req.body;
+
+    const userToCheck = await User.findById(
+      req.session.currentUser._id
+    ).populate("favorites");
+
+    const filterFavorites = userToCheck.favorites.filter((game) => {
+      console.log(game.apiId, " + ", apiId);
+      return game.apiId === apiId;
     });
 
-    res.redirect("/favorites");
+    if (filterFavorites.length === 0) {
+      const newFavorite = await Favorite.create(req.body);
+      await User.findByIdAndUpdate(req.session.currentUser._id, {
+        $push: { favorites: newFavorite._id },
+      });
+
+      res.redirect("/favorites");
+    } else {
+      return res.redirect("/favorites");
+    }
   } catch (error) {
     next(error);
   }
@@ -94,6 +109,24 @@ router.get("/favorites", isLoggedIn, async (req, res, next) => {
     const { favorites } = user;
     console.log(favorites);
     res.render("favorites", { favorites });
+  } catch (error) {
+    next(error);
+  }
+});
+
+//Delete Favorite
+
+router.post("/favorites/:gameId/delete", async (req, res, next) => {
+  try {
+    const { _id: id } = req.session.currentUser;
+    const { gameId } = req.params;
+    await User.findByIdAndUpdate(id, {
+      $pull: {
+        favorites: gameId,
+      },
+    });
+    await Favorite.findByIdAndDelete(gameId);
+    res.redirect("/favorites");
   } catch (error) {
     next(error);
   }
