@@ -4,6 +4,7 @@ const ApiService = require("../services/api.service");
 const apiService = new ApiService();
 const User = require("../models/User.model");
 const Favorite = require("../models/Favorite.model");
+const isLoggedIn = require("../middleware/isLoggedIn");
 
 router.get("/search", async (req, res, next) => {
   try {
@@ -72,7 +73,7 @@ router.get("/games/game-details/:id", async (req, res, next) => {
   }
 });
 
-router.post("/favorites", async (req, res, next) => {
+router.post("/favorites", isLoggedIn, async (req, res, next) => {
   try {
     const newFavorite = await Favorite.create(req.body);
     await User.findByIdAndUpdate(req.session.currentUser._id, {
@@ -85,7 +86,7 @@ router.post("/favorites", async (req, res, next) => {
   }
 });
 
-router.get("/favorites", async (req, res, next) => {
+router.get("/favorites", isLoggedIn, async (req, res, next) => {
   try {
     const user = await User.findById(req.session.currentUser._id).populate(
       "favorites"
