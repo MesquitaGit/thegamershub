@@ -1,24 +1,11 @@
+<div class="hero-image-games-list">
+    <div class="hero-text">
+      <h1>List of Games</h1>
+    </div>
+  </div>
 <section class="container-fluid games-list">
   {{#each games}}
-    <div>
       {{> gameCard this}}
-      <form action="/favorites" method="post">
-        <input
-          type="text"
-          name="name"
-          value="{{name}}"
-          style="display: none;"
-        />
-        <input type="text" name="apiId" value="{{id}}" style="display: none;" />
-        <input
-          type="text"
-          name="backgroundImage"
-          value="{{background_image}}"
-          style="display: none;"
-        />
-        <button type="submit">Add to favorites</button>
-      </form>
-    </div>
   {{/each}}
 </section>
 
