@@ -5,6 +5,8 @@ const apiService = new ApiService();
 const User = require("../models/User.model");
 const Favorite = require("../models/Favorite.model");
 const isLoggedIn = require("../middleware/isLoggedIn");
+// ********* require fileUploader in order to use it *********
+const fileUploader = require("../config/cloudinary.config");
 
 router.get("/search", async (req, res, next) => {
   try {

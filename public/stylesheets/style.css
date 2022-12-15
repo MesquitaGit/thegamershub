@@ -54,7 +54,7 @@ nav {
 
 /* The hero image */
 .hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/3.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/doti6zlah/image/upload/v1671139680/thegamershub/3_lxkekr.jpg");
   height: 90vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -126,7 +126,7 @@ footer p a {
   justify-content: center;
   align-items: center;
   height: 84.6vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/1.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/doti6zlah/image/upload/v1671139705/thegamershub/1_d2rrhr.jpg");
   background-repeat: no-repeat;
   background-size:cover;
   background-position: center;
