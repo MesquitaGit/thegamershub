@@ -1,12 +1,16 @@
 <section class="container-fluid games-list">
   {{#each favorites}}
-    <div class="game-card">
-      <h5>{{name}}</h5>
-      <img src="{{backgroundImage}}" alt="{{name}}" width="200" />
+    <div class="card game-card">
+      <img src="{{backgroundImage}}" class="card-img-top" alt="{{name}}" />
+      <div class="card-body"></div>
+      <h5 class="card-title">{{name}}</h5>
       <a href="/games/game-details/{{apiId}}">See Details</a>
       <div>
         <form action="/favorites/{{id}}/delete" method="post">
-          <button type="submit">Remove from favorites</button>
+          <button type="submit" class="btn btn-primary"><i
+              class="bi bi-heartbreak"
+            ></i>
+            Remove from Favorites</button>
         </form>
       </div>
     </div>
