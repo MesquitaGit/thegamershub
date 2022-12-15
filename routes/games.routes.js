@@ -114,8 +114,6 @@ router.get("/favorites", isLoggedIn, async (req, res, next) => {
   }
 });
 
-//Delete Favorite
-
 router.post("/favorites/:gameId/delete", async (req, res, next) => {
   try {
     const { _id: id } = req.session.currentUser;

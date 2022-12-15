@@ -170,7 +170,6 @@ router.post("/profile/:userId/edit", isLoggedIn, async (req, res, next) => {
   }
 });
 
-// GET /auth/logout
 router.post("/logout", isLoggedIn, (req, res) => {
   req.session.destroy((err) => {
     if (err) {
