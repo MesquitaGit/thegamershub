@@ -9,7 +9,13 @@
   {{/each}}
 </section>
 
-<div>
-  <a href="/games/{{previousPage}}">Previous Page</a>
-  <a href="/games/{{nextPage}}">Next Page</a>
+<div class="pagination-section">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="/games/{{previousPage}}">Previous</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="/games/{{nextPage}}">Next</a>
+    </li>
+  </ul>
 </div>

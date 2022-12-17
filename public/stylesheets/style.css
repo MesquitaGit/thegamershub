@@ -221,7 +221,7 @@ footer p a {
 }
 
 .games-list {
-  padding: 2%;
+  padding: 2% 2% 0.5%;
   display: flex;
   gap: 1%;
   flex-wrap: wrap;
@@ -299,4 +299,20 @@ footer p a {
   justify-content:flex-end;
   align-items:flex-start;
   padding: 2%;
+}
+
+.pagination-section {
+  background-color: var(--color-primary);
+}
+
+.pagination {
+  margin: 0;
+  padding-bottom: 1%;
+  padding-top: 0;
+  justify-content: center;
+}
+
+.page-link {
+  background-color: var(--color-secondary);
+  color: var(--color-accent2);
 }
