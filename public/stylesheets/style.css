@@ -283,3 +283,7 @@ footer p a {
   align-items:flex-start;
   padding: 2%;
 }
+
+.profile-section {
+  height: 84.6vh;
+}
