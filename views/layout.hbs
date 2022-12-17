@@ -55,12 +55,14 @@
             <li class="nav-item">
               <a class="btn btn-info me-1 login-btn" href="/login">Login</a>
             </li>
+            <li class="nav-item">
+              <form action="/logout" method="post">
+                <button type="submit" class="btn btn-info me-1">Logout</button>
+              </form>
+            </li>
           </ul>
         </div>
       </div>
-      <form action="/logout" method="post">
-        <button type="submit">Logout</button>
-      </form>
     </nav>
 
     {{{body}}}

@@ -1,16 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Abel&family=Exo+2:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Exo+2:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 /* Defining color scheme */
 :root {
-  --color-primary: #3B2967;
+  --color-primary: #3b2967;
   --color-secondary: #101131;
-  --color-accent: #9CBAD7;
+  --color-accent: #9cbad7;
   --color-accent2: #cfe3f5;
   --color4: #363989;
-  --color5: #2A3382;
+  --color5: #2a3382;
 }
 
-body, html {
+body,
+html {
   font-family: "Exo 2", sans-serif;
   height: 100%;
 }
@@ -19,42 +20,22 @@ nav {
   background-color: var(--color-secondary);
 }
 
-.nav-link {
+.nav-link,
+.navbar-brand,
+.navbar-brand:hover,
+.nav-link:hover,
+.signup-btn,
+.signup-btn:hover,
+.login-btn,
+.login-btn:hover,
+.hero-text {
   color: var(--color-accent2);
 }
-
-.navbar-brand {
-  color: var(--color-accent2);
-} 
-
-.navbar-brand:hover {
-  color: var(--color-accent2);
-} 
-
-.nav-link:hover {
-  color: var(--color-accent2);
-}
-
-.signup-btn {
-  color: var(--color-accent2);
-}
-
-.signup-btn:hover {
-  color: var(--color-accent2);
-}
-
-.login-btn {
-  color: var(--color-accent2);
-}
-
-.login-btn:hover {
-  color: var(--color-accent2);
-}
-
 
 /* The hero image */
 .hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/doti6zlah/image/upload/v1671139680/thegamershub/3_lxkekr.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://res.cloudinary.com/doti6zlah/image/upload/v1671139680/thegamershub/3_lxkekr.jpg");
   height: 90vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -63,10 +44,6 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.hero-text {
-  color: var(--color-accent2);
 }
 
 .intro {
@@ -78,11 +55,11 @@ nav {
 }
 
 .intro .img-container img {
-  width: 100%
+  width: 100%;
 }
 
 .intro .row {
-  gap:5%;
+  gap: 5%;
 }
 
 .intro .random-games-container {
@@ -117,7 +94,7 @@ footer p a {
 }
 
 .submitSignupBtn:hover {
-  background-color: #9867C5;
+  background-color: #9867c5;
   transform: translateY(-2px);
 }
 
@@ -126,9 +103,10 @@ footer p a {
   justify-content: center;
   align-items: center;
   height: 84.6vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/doti6zlah/image/upload/v1671139705/thegamershub/1_d2rrhr.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://res.cloudinary.com/doti6zlah/image/upload/v1671139705/thegamershub/1_d2rrhr.jpg");
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size: cover;
   background-position: center;
 }
 
@@ -137,7 +115,7 @@ footer p a {
   width: 400px;
   border-radius: 8px;
   padding: 20px 40px;
-  box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+  box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
 }
 
 .signupTitle {
@@ -158,7 +136,7 @@ footer p a {
   left: 0px;
   height: 100%;
   width: 100%;
-  border: 1px solid #DADCE0;
+  border: 1px solid #dadce0;
   border-radius: 7px;
   font-size: 16px;
   padding: 0 20px;
@@ -177,7 +155,7 @@ footer p a {
   left: 15px;
   padding: 0 4px;
   background-color: white;
-  color: #DADCE0;
+  color: #dadce0;
   font-size: 16px;
   transition: 0.5s;
   z-index: 0;
@@ -196,7 +174,7 @@ footer p a {
   border: 2px solid var(--color-primary);
 }
 
-.input:not(:placeholder-shown)+ .label {
+.input:not(:placeholder-shown) + .label {
   top: -7px;
   left: 3px;
   z-index: 10;
@@ -204,19 +182,19 @@ footer p a {
   font-weight: 600;
 }
 
-
 /*games list styling*/
 
 .hero-image-games-list {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/doti6zlah/image/upload/v1671269764/thegamershub/4_hxr2vm.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://res.cloudinary.com/doti6zlah/image/upload/v1671269764/thegamershub/4_hxr2vm.jpg");
   height: 50vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content:flex-end;
-  align-items:flex-start;
+  justify-content: flex-end;
+  align-items: flex-start;
   padding: 2%;
 }
 
@@ -227,7 +205,7 @@ footer p a {
   flex-wrap: wrap;
   background-color: var(--color-primary);
   flex-direction: row;
-  justify-content:space-around;
+  justify-content: space-around;
   align-items: inherit;
 }
 
@@ -272,15 +250,16 @@ footer p a {
 /* Search results styling*/
 
 .hero-image-search-list {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/doti6zlah/image/upload/v1671269765/thegamershub/5_xla7rr.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://res.cloudinary.com/doti6zlah/image/upload/v1671269765/thegamershub/5_xla7rr.jpg");
   height: 50vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content:flex-end;
-  align-items:flex-start;
+  justify-content: flex-end;
+  align-items: flex-start;
   padding: 2%;
 }
 
@@ -289,15 +268,16 @@ footer p a {
 }
 
 .hero-image-favorites-list {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/doti6zlah/image/upload/v1671280633/thegamershub/10_p0jdis.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://res.cloudinary.com/doti6zlah/image/upload/v1671280633/thegamershub/10_p0jdis.jpg");
   height: 50vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content:flex-end;
-  align-items:flex-start;
+  justify-content: flex-end;
+  align-items: flex-start;
   padding: 2%;
 }
 

@@ -14,7 +14,28 @@
             </div>
             <div>
               <h4 class="mb-2">Welcome {{currentUser.username}}!</h4>
-              <a href="/profile/edit">Edit your profile</a>
+              <h6>Edit your profile</h6>
+              <form
+                action="/profile/{{currentUser._id}}/edit"
+                method="post"
+                enctype="multipart/form-data"
+              >
+                <label>
+                  Username
+                  <input
+                    type="text"
+                    name="username"
+                    value="{{currentUser.username}}"
+                  />
+                </label>
+                <br />
+                <label>
+                  Profile picture
+                  <input type="file" name="picture_url" />
+                </label>
+                <br />
+                <button type="submit">Edit</button>
+              </form>
             </div>
             <br />
             <a href="/favorites" class="btn btn-primary btn-rounded btn-lg">

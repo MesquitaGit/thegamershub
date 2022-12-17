@@ -152,14 +152,6 @@ router.get("/profile", isLoggedIn, (req, res, next) => {
   }
 });
 
-router.get("/profile/edit", isLoggedIn, (req, res, next) => {
-  try {
-    res.render("auth/edit-profile");
-  } catch (error) {
-    ñext(error);
-  }
-});
-
 router.post(
   "/profile/:userId/edit",
   fileUploader.single("picture_url"),
