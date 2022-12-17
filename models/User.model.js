@@ -22,7 +22,8 @@ const userSchema = new Schema(
     },
     picture_url: {
       type: String,
-      default: "",
+      default:
+        "https://res.cloudinary.com/doti6zlah/image/upload/v1671275972/thegamershub/9_z1j3u6.jpg",
     },
     favorites: [{ type: Schema.Types.ObjectId, ref: "Favorite" }],
   },

@@ -160,17 +160,29 @@ router.get("/profile/edit", isLoggedIn, (req, res, next) => {
   }
 });
 
-router.post("/profile/:userId/edit", isLoggedIn, async (req, res, next) => {
-  try {
-    const { userId } = req.params;
-    const updatedUser = req.body;
-    const newUser = await User.findByIdAndUpdate(userId, updatedUser);
-    req.session.currentUser = newUser;
-    res.redirect("/profile");
-  } catch (error) {
-    next(error);
+router.post(
+  "/profile/:userId/edit",
+  fileUploader.single("picture_url"),
+  isLoggedIn,
+  async (req, res, next) => {
+    try {
+      const { userId } = req.params;
+      const userObj = {
+        username: req.body.username,
+      };
+      if (req.file) {
+        userObj.picture_url = req.file.path;
+      }
+      const newUser = await User.findByIdAndUpdate(userId, userObj, {
+        new: true,
+      });
+      req.session.currentUser = newUser;
+      res.redirect("/profile");
+    } catch (error) {
+      next(error);
+    }
   }
-});
+);
 
 router.post("/logout", isLoggedIn, (req, res) => {
   req.session.destroy((err) => {
