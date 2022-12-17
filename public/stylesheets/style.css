@@ -287,3 +287,16 @@ footer p a {
 .profile-section {
   height: 84.6vh;
 }
+
+.hero-image-favorites-list {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/doti6zlah/image/upload/v1671280633/thegamershub/10_p0jdis.jpg");
+  height: 50vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-end;
+  align-items:flex-start;
+  padding: 2%;
+}
