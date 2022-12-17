@@ -208,7 +208,7 @@ footer p a {
 /*games list styling*/
 
 .hero-image-games-list {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/4.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/doti6zlah/image/upload/v1671269764/thegamershub/4_hxr2vm.jpg");
   height: 50vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -272,7 +272,7 @@ footer p a {
 /* Search results styling*/
 
 .hero-image-search-list {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/5.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/doti6zlah/image/upload/v1671269765/thegamershub/5_xla7rr.jpg");
   height: 50vh;
   background-position: center;
   background-repeat: no-repeat;
