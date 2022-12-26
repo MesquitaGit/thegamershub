@@ -2,20 +2,43 @@
     <div class="hero-text">
       <h1>List of Games</h1>
     </div>
-  </div>
+
+    <div class="dropdown">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Order by
+  </a>
+
+  <ul class="dropdown-menu">
+    <li><a {{#ifCond sortMethod "popularity"}} class="dropdown-item active" {{else}} class="dropdown-item" {{/ifCond}} href="/games">Popularity</a></li>
+    <li><a {{#ifCond sortMethod "name"}} class="dropdown-item active" {{else}} class="dropdown-item" {{/ifCond}} href="/games/name">Name</a></li>
+    <li><a {{#ifCond sortMethod "released"}} class="dropdown-item active" {{else}} class="dropdown-item" {{/ifCond}} href="/games/released">Release Date</a></li>
+    <li><a {{#ifCond sortMethod "rating"}} class="dropdown-item active" {{else}} class="dropdown-item" {{/ifCond}} href="/games/rating">Rating</a></li>
+    <li><a {{#ifCond sortMethod "metacritic"}} class="dropdown-item active" {{else}} class="dropdown-item" {{/ifCond}} href="/games/metacritic">Metacritic Score</a></li>
+  </ul>
+</div>
+</div>
+
 <section class="container-fluid games-list">
   {{#each games}}
-      {{> gameCard this}}
+    {{> gameCard this}}
   {{/each}}
 </section>
 
 <div class="pagination-section">
   <ul class="pagination">
     <li class="page-item">
+      {{#if sortMethod}}
+      <a class="page-link" href="/games/{{sortMethod}}/{{previousPage}}">Previous</a>
+      {{else}}
       <a class="page-link" href="/games/{{previousPage}}">Previous</a>
+      {{/if}}
     </li>
     <li class="page-item">
+      {{#if sortMethod}}
+      <a class="page-link" href="/games/{{sortMethod}}/{{nextPage}}">Next</a>
+      {{else}}
       <a class="page-link" href="/games/{{nextPage}}">Next</a>
+      {{/if}}
     </li>
   </ul>
 </div>

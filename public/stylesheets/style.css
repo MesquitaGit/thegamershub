@@ -192,10 +192,10 @@ footer p a {
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  padding: 2%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 2% 3% 3%;
 }
 
 .games-list {

@@ -5,14 +5,12 @@ const apiService = new ApiService();
 const User = require("../models/User.model");
 const Favorite = require("../models/Favorite.model");
 const isLoggedIn = require("../middleware/isLoggedIn");
-// ********* require fileUploader in order to use it *********
-const fileUploader = require("../config/cloudinary.config");
 
 router.get("/search", async (req, res, next) => {
   try {
     const { game } = req.query;
     const searchResults = await apiService.searchGame(game);
-    //console.log(searchResults.data.results);
+
     res.render("search-results", { games: searchResults.data.results });
   } catch (error) {
     next(error);
@@ -22,9 +20,10 @@ router.get("/search", async (req, res, next) => {
 router.get("/games", async (req, res, next) => {
   try {
     const allGames = await apiService.getAllGames();
-    //console.log("All games:", allGames.data);
+
     res.render("games", {
       games: allGames.data.results,
+      sortMethod: "popularity",
       nextPage: 2,
     });
   } catch (error) {
@@ -32,29 +31,33 @@ router.get("/games", async (req, res, next) => {
   }
 });
 
-/*finding the page number in next/previous key
-to then render on hbs anchor tags for next and previous pages*/
-function findPageNum(link) {
-  if (!link) return null;
+router.get("/games/:sortMethod", async (req, res, next) => {
+  // Games can be sorted by: "name", "released", "added", "created", "updated", "rating", "metacritic".
+  // You can reverse the sort order adding a hyphen, for example: "-released".
+  const { sortMethod } = req.params;
+  try {
+    const orderedGames = await apiService.getAllGames(sortMethod);
+    res.render("games", {
+      games: orderedGames.data.results,
+      sortMethod,
+      nextPage: 2,
+    });
+  } catch (error) {
+    next(error);
+  }
+});
 
-  let pageOnwards = link.substring(link.indexOf("page"));
-  let equalsOnwards = pageOnwards.substring(pageOnwards.indexOf("=") + 1);
-  let ampersandIndex = equalsOnwards.indexOf("&");
+router.get("/games/:sortMethod/:pageNumber", async (req, res, next) => {
+  const { sortMethod, pageNumber } = req.params;
 
-  if (ampersandIndex === -1) return `/games/${equalsOnwards}`;
-
-  return `/games/${equalsOnwards.substring(0, ampersandIndex)}`;
-}
-
-router.get("/games/:pageNumber", async (req, res, next) => {
-  const { pageNumber } = req.params;
   try {
     const nextPage = Number(pageNumber) + 1;
     const previousPage = Number(pageNumber) - 1 || 1;
-    const allGames = await apiService.getAllGames(pageNumber);
-    //console.log(allGames.data.results);
+    const orderedGames = await apiService.getAllGames(sortMethod, pageNumber);
+
     res.render("games", {
-      games: allGames.data.results,
+      games: orderedGames.data.results,
+      sortMethod,
       nextPage,
       previousPage,
     });
@@ -68,7 +71,7 @@ router.get("/games/game-details/:id", async (req, res, next) => {
   console.log(id);
   try {
     const singleGame = await apiService.getSingleGame(id);
-    console.log("game:", singleGame.data);
+
     res.render("game-details", { game: singleGame.data });
   } catch (error) {
     next(error);
@@ -84,7 +87,6 @@ router.post("/favorites", isLoggedIn, async (req, res, next) => {
     ).populate("favorites");
 
     const filterFavorites = userToCheck.favorites.filter((game) => {
-      console.log(game.apiId, " + ", apiId);
       return game.apiId === apiId;
     });
 
@@ -109,7 +111,7 @@ router.get("/favorites", isLoggedIn, async (req, res, next) => {
       "favorites"
     );
     const { favorites } = user;
-    console.log(favorites);
+
     res.render("favorites", { favorites });
   } catch (error) {
     next(error);

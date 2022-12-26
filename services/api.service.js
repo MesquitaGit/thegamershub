@@ -12,21 +12,41 @@ class ApiService {
     });
   }
 
-  getAllGames = (pageNumber) => {
+  getAllGames = (orderMethod, pageNumber) => {
     if (!pageNumber) {
+      if (!orderMethod) {
+        return this.api.get("/games", {
+          params: {
+            key,
+          },
+        });
+      }
       return this.api.get("/games", {
         params: {
           key,
+          ordering: orderMethod,
         },
       });
     }
 
-    return this.api.get("/games", {
-      params: {
-        key,
-        page: pageNumber,
-      },
-    });
+    if (pageNumber && !orderMethod) {
+      return this.api.get("/games", {
+        params: {
+          key,
+          page: pageNumber,
+        },
+      });
+    }
+
+    if (pageNumber && orderMethod) {
+      return this.api.get("/games", {
+        params: {
+          key,
+          page: pageNumber,
+          ordering: orderMethod,
+        },
+      });
+    }
   };
 
   getSingleGame = (gameId) => {

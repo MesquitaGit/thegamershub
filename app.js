@@ -15,6 +15,14 @@ const hbs = require("hbs");
 // We are using partials
 hbs.registerPartials(__dirname + "/views/partials");
 
+// Enabling conditional if checks
+hbs.registerHelper("ifCond", function (v1, v2, options) {
+  if (v1 === v2) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+});
+
 const app = express();
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
