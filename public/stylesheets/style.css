@@ -16,6 +16,7 @@ html {
   height: 100%;
 }
 
+/* Navbar styling */
 nav {
   background-color: var(--color-secondary);
 }
@@ -24,18 +25,25 @@ nav {
 .navbar-brand,
 .navbar-brand:hover,
 .nav-link:hover,
-.signup-btn,
-.signup-btn:hover,
-.login-btn,
-.login-btn:hover,
 .hero-text {
   color: var(--color-accent2);
 }
 
-/* The hero image */
+.navbar-btn-group {
+  margin-top: 1%;
+}
+
+.general-btn,
+.general-btn:hover {
+  color: var(--color-accent2);
+  background-color: var(--color-primary);
+}
+
+/* Hero image styling */
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("https://res.cloudinary.com/doti6zlah/image/upload/v1671139680/thegamershub/3_lxkekr.jpg");
+  width: 100%;
   height: 90vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -46,6 +54,13 @@ nav {
   align-items: center;
 }
 
+.search-btn,
+.search-btn:hover {
+  background-color: var(--color-accent2);
+  color: var(--color-primary);
+}
+
+/* Homepage intro styling */
 .intro {
   background-color: var(--color-secondary);
   color: var(--color-accent2);
@@ -66,6 +81,7 @@ nav {
   display: flex;
 }
 
+/* Footer styling */
 footer {
   background-color: var(--color-secondary);
 }
@@ -80,6 +96,7 @@ footer p a {
   color: var(--color-accent2);
 }
 
+/* Sign up and login styling */
 .submitSignupBtn {
   display: block;
   margin-left: auto;
@@ -182,8 +199,7 @@ footer p a {
   font-weight: 600;
 }
 
-/*games list styling*/
-
+/* Games list styling */
 .hero-image-games-list {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("https://res.cloudinary.com/doti6zlah/image/upload/v1671269764/thegamershub/4_hxr2vm.jpg");
@@ -220,35 +236,7 @@ footer p a {
   color: var(--color-accent2);
 }
 
-.star {
-  position: relative;
-  display: inline-block;
-  color: #ffc107;
-  font-size: 2em;
-}
-
-.star::before,
-.star::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: inherit;
-  height: inherit;
-  background: currentColor;
-  border-radius: 50%;
-}
-
-.star::before {
-  transform: rotate(144deg);
-}
-
-.star::after {
-  transform: rotate(-144deg);
-}
-
-/* Search results styling*/
-
+/* Search results styling */
 .hero-image-search-list {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("https://res.cloudinary.com/doti6zlah/image/upload/v1671269765/thegamershub/5_xla7rr.jpg");

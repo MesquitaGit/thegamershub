@@ -31,6 +31,17 @@ router.get("/games", async (req, res, next) => {
   }
 });
 
+router.get("/games/game-details/:id", async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    const singleGame = await apiService.getSingleGame(id);
+
+    res.render("game-details", { game: singleGame.data });
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.get("/games/:sortMethod", async (req, res, next) => {
   // Games can be sorted by: "name", "released", "added", "created", "updated", "rating", "metacritic".
   // You can reverse the sort order adding a hyphen, for example: "-released".
@@ -61,18 +72,6 @@ router.get("/games/:sortMethod/:pageNumber", async (req, res, next) => {
       nextPage,
       previousPage,
     });
-  } catch (error) {
-    next(error);
-  }
-});
-
-router.get("/games/game-details/:id", async (req, res, next) => {
-  const { id } = req.params;
-  console.log(id);
-  try {
-    const singleGame = await apiService.getSingleGame(id);
-
-    res.render("game-details", { game: singleGame.data });
   } catch (error) {
     next(error);
   }

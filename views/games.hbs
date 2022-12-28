@@ -4,7 +4,7 @@
     </div>
 
     <div class="dropdown">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <a class="btn search-btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Order by
   </a>
 
@@ -28,16 +28,16 @@
   <ul class="pagination">
     <li class="page-item">
       {{#if sortMethod}}
-      <a class="page-link" href="/games/{{sortMethod}}/{{previousPage}}">Previous</a>
+      <a class="page-link" href="/games/{{sortMethod}}/{{previousPage}}">« Previous</a>
       {{else}}
-      <a class="page-link" href="/games/{{previousPage}}">Previous</a>
+      <a class="page-link" href="/games/{{previousPage}}">« Previous</a>
       {{/if}}
     </li>
     <li class="page-item">
       {{#if sortMethod}}
-      <a class="page-link" href="/games/{{sortMethod}}/{{nextPage}}">Next</a>
+      <a class="page-link" href="/games/{{sortMethod}}/{{nextPage}}">Next »</a>
       {{else}}
-      <a class="page-link" href="/games/{{nextPage}}">Next</a>
+      <a class="page-link" href="/games/{{nextPage}}">Next »</a>
       {{/if}}
     </li>
   </ul>

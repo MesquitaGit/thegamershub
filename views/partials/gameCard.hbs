@@ -2,7 +2,8 @@
   <img src="{{background_image}}" class="card-img-top" alt="{{name}}" />
   <div class="card-body">
     <h5 class="card-title">{{name}}</h5>
-    <a href="/games/game-details/{{id}}" class="btn btn-primary">See Details</a>
+    <button href="/games/game-details/{{id}}" class="btn general-btn">See
+      Details</button>
     <form action="/favorites" method="post">
       <input type="text" name="name" value="{{name}}" style="display: none;" />
       <input type="text" name="apiId" value="{{id}}" style="display: none;" />
@@ -12,7 +13,7 @@
         value="{{background_image}}"
         style="display: none;"
       />
-      <button type="submit" class="btn btn-primary"><i
+      <button type="submit" class="btn general-btn"><i
           class="bi bi-suit-heart"
         ></i>
         Add to Favorites</button>
