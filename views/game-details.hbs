@@ -1,18 +1,26 @@
-<section class="container-fluid game-details-all">
-  <div>
-    <h1>{{game.name}}</h1>
+<section class="container-fluid game-details-main-container">
+
+  <div class="row title-container">
+    <div class="col-12">
+      <h1>{{game.name}}</h1>
+    </div>
   </div>
 
-  <div class="game-details_ container-fluid">
-    <div class="game-details__">
-      <img src="{{game.background_image}}" alt="{{game.name}}" width="500" />
-      <a href="{{game.website}}">Website</a>
-      <p>Playtime: {{game.playtime}} hours</p>
-      <p>Release Date: {{game.released}}</p>
-      <p>Metacritic Score: {{game.metacritic}}</p>
+  <div class="row game-info-container">
+    <div class="col-lg-6 col-12 game-details-container">
+      <div class="game-details-picture">
+        <img src="{{game.background_image}}" alt="{{game.name}}" />
+      </div>
 
       <div>
-        <h5>Genres:</h5>
+        <a class="btn me-2 general-btn" href="{{game.website}}">Website</a>
+        <p><b>Playtime:</b> {{game.playtime}} hours</p>
+        <p><b>Release Date:</b> {{game.released}}</p>
+        <p><b>Metacritic Score:</b> {{game.metacritic}}</p>
+      </div>
+
+      <div>
+        <h6><b>Genres:</b></h6>
         {{#each game.genres}}
           <ul>
             <li>{{name}}</li>
@@ -21,7 +29,7 @@
       </div>
     </div>
 
-    <div class="game-description">
+    <div class="col-lg-6 col-12 game-description-container">
       <p>{{game.description_raw}}</p>
     </div>
   </div>
