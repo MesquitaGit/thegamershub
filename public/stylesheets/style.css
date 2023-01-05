@@ -81,6 +81,16 @@ nav {
   display: flex;
 }
 
+.random-games-container {
+  padding: 2% 2% 0.5%;
+  display: flex;
+  gap: 1%;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* Footer styling */
 footer {
   background-color: var(--color-secondary);
@@ -236,6 +246,12 @@ footer p a {
   color: var(--color-accent2);
 }
 
+.card-img,
+.card-img-bottom,
+.card-img-top {
+  height: 40%;
+}
+
 /* Search results styling */
 .hero-image-search-list {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -283,4 +299,62 @@ footer p a {
 .page-link {
   background-color: var(--color-secondary);
   color: var(--color-accent2);
+}
+
+.game-details-all {
+  height: 84.6vh;
+  padding: 2%;
+  background-image: radial-gradient(
+    circle,
+    #3b2967,
+    #32255d,
+    #292052,
+    #211c48,
+    #19173e,
+    #191841,
+    #181a43,
+    #181b46,
+    #1f2256,
+    #262a67,
+    #2e3178,
+    #363989
+  );
+  color: var(--color-accent2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.game-details_ {
+  height: 100%;
+  padding: 2% 10%;
+  background-image: radial-gradient(
+    circle,
+    #3b2967,
+    #32255d,
+    #292052,
+    #211c48,
+    #19173e,
+    #191841,
+    #181a43,
+    #181b46,
+    #1f2256,
+    #262a67,
+    #2e3178,
+    #363989
+  );
+  color: var(--color-accent2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.game-details__ {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.game-description {
+  width: 40%;
 }

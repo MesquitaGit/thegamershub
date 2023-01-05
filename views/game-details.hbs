@@ -1,5 +1,29 @@
-<img src="{{game.background_image}}" alt="{{game.name}}" width="500" />
-<h1>{{game.name}}</h1>
-<br />
-<p>Playtime: {{game.playtime}} hours</p>
-<p>{{game.description_raw}}</p>
+<section class="container-fluid game-details-all">
+  <div>
+    <h1>{{game.name}}</h1>
+  </div>
+
+  <div class="game-details_ container-fluid">
+    <div class="game-details__">
+      <img src="{{game.background_image}}" alt="{{game.name}}" width="500" />
+      <a href="{{game.website}}">Website</a>
+      <p>Playtime: {{game.playtime}} hours</p>
+      <p>Release Date: {{game.released}}</p>
+      <p>Metacritic Score: {{game.metacritic}}</p>
+
+      <div>
+        <h5>Genres:</h5>
+        {{#each game.genres}}
+          <ul>
+            <li>{{name}}</li>
+          </ul>
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="game-description">
+      <p>{{game.description_raw}}</p>
+    </div>
+  </div>
+
+</section>
