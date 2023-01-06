@@ -37,6 +37,10 @@ nav {
   margin-top: 1%;
 }
 
+.navbar-btn-group ul {
+  flex-direction: row;
+}
+
 .general-btn {
   color: var(--color-accent2);
   background-color: var(--color-primary);
@@ -113,8 +117,16 @@ nav {
   align-items: center;
 }
 
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .game-card-random {
-  width: 24%;
+  min-width: 24%;
+  max-width: 48%;
+  flex-grow: 1;
   height: 24em;
   margin-bottom: 2%;
   display: flex;
@@ -125,11 +137,17 @@ nav {
   color: var(--color-accent2);
 }
 
+.card-btn-container {
+  display: flex;
+  gap: 2%;
+}
+
 /* Footer styling */
 footer {
   background-color: var(--color-secondary);
   margin-top: auto;
 }
+
 footer p {
   text-align: center;
   color: var(--color-accent2);
@@ -295,7 +313,7 @@ footer p a:hover {
 }
 
 .game-card {
-  width: 18%;
+  width: 23%;
   height: 24em;
   margin-bottom: 2%;
   display: flex;
@@ -309,7 +327,9 @@ footer p a:hover {
 .card-img,
 .card-img-bottom,
 .card-img-top {
-  height: 40%;
+  min-height: 50%;
+  max-height: 50%;
+  object-fit: cover;
 }
 
 /* Search results styling */
@@ -428,4 +448,24 @@ footer p a:hover {
 
 .profile-card {
   background-color: var(--color-accent2);
+}
+
+/* Media queries */
+
+@media only screen and (max-width: 1120px) {
+  .card.game-card {
+    width: 31%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .card.game-card {
+    width: 48%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .card.game-card {
+    width: 100%;
+  }
 }

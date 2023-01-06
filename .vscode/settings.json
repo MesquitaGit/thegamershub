@@ -1,0 +1,4 @@
+{
+    "djlint.useVenv": false,
+    "djlint.pythonPath": "python"
+}
