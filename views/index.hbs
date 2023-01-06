@@ -19,7 +19,7 @@
 
 <section class="container-fluid intro">
   <div class="row align-items-center">
-    <div class="col-5">
+    <div class="col-6 intro-img-txt-container">
       <div class="img-container">
         <img
           src="https://res.cloudinary.com/doti6zlah/image/upload/v1671139681/thegamershub/gamer_givvhv.jpg"
@@ -27,16 +27,14 @@
         />
       </div>
       <br />
-      <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex eos
-        quae, quod sapiente, odio corrupti est doloremque nihil laboriosam
-        voluptatum repellat libero earum magni provident illum ab maiores,
-        aliquid omnis.
+      <div class="intro-text">
+      <p>Gaming can bring a lot of joy and excitement to people's lives. Whether it's playing a solo campaign or competing against others in an online match, the sense of accomplishment and enjoyment that comes from gaming is unparalleled. The escapism that gaming provides can also be a great stress reliever and provide a much-needed break from the daily grind. Additionally, gaming can foster a sense of community and connection with others, as people can come together and bond over their shared love of a particular game or series.</p>
       </div>
     </div>
 
     <div class="container-fluid col-6 random-games-container">
       {{#each gameCardItems}}
-        {{> gameCard this}}
+        {{> randomGameCard this}}
       {{/each}}
     </div>
   </div>

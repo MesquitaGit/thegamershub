@@ -24,20 +24,28 @@ nav {
 
 .nav-link,
 .navbar-brand,
-.navbar-brand:hover,
-.nav-link:hover,
 .hero-text {
   color: var(--color-accent2);
+}
+
+.navbar-brand:hover,
+.nav-link:hover {
+  color: var(--color6);
 }
 
 .navbar-btn-group {
   margin-top: 1%;
 }
 
-.general-btn,
-.general-btn:hover {
+.general-btn {
   color: var(--color-accent2);
   background-color: var(--color-primary);
+}
+
+.general-btn:hover {
+  color: var(--color-accent2);
+  background-color: var(--color6);
+  transform: translateY(-2px);
 }
 
 .content-container {
@@ -62,41 +70,59 @@ nav {
   align-items: center;
 }
 
-.search-btn,
-.search-btn:hover {
+.search-btn {
   background-color: var(--color-accent2);
   color: var(--color-primary);
+}
+
+.search-btn:hover {
+  color: var(--color-accent2);
+  background-color: var(--color6);
+  transform: translateY(-2px);
 }
 
 /* Homepage intro styling */
 .intro {
   background-color: var(--color-secondary);
   color: var(--color-accent2);
-  padding: 10% 8%;
+  padding: 5% 2%;
   display: flex;
   justify-content: space-evenly;
+}
+
+.intro-img-txt-container {
+  padding: 3%;
 }
 
 .intro .img-container img {
   width: 100%;
 }
 
-.intro .row {
-  gap: 5%;
-}
-
-.intro .random-games-container {
-  display: flex;
+.intro-text {
+  text-align: justify;
 }
 
 .random-games-container {
   padding: 2% 2% 0.5%;
+  margin: 0;
   display: flex;
   gap: 1%;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.game-card-random {
+  width: 24%;
+  height: 24em;
+  margin-bottom: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid var(--color-accent2);
+  background-color: var(--color-secondary);
+  color: var(--color-accent2);
 }
 
 /* Footer styling */
@@ -113,6 +139,11 @@ footer p {
 
 footer p a {
   color: var(--color-accent2);
+  text-decoration: none;
+}
+
+footer p a:hover {
+  color: var(--color6);
 }
 
 /* Sign up and login styling */
@@ -130,7 +161,7 @@ footer p a {
 }
 
 .submitSignupBtn:hover {
-  background-color: #9867c5;
+  background-color: var(--color6);
   transform: translateY(-2px);
 }
 
@@ -265,6 +296,7 @@ footer p a {
 
 .game-card {
   width: 18%;
+  height: 24em;
   margin-bottom: 2%;
   display: flex;
   flex-direction: column;
@@ -329,6 +361,11 @@ footer p a {
   color: var(--color-accent2);
 }
 
+.page-link:hover {
+  color: var(--color-accent2);
+  background-color: var(--color6);
+}
+
 .game-details-main-container {
   height: 100%;
   padding-top: 3%;
@@ -367,4 +404,28 @@ footer p a {
 .title-container,
 .game-info-container {
   width: 80%;
+}
+
+/* Profile page styling */
+
+.profile-section {
+  background-image: radial-gradient(
+    circle,
+    #3b2967,
+    #4f3981,
+    #63499c,
+    #795ab8,
+    #8f6bd4,
+    #8f6dd7,
+    #8e6edb,
+    #8e70de,
+    #7762c8,
+    #6154b3,
+    #4b469e,
+    #363989
+  );
+}
+
+.profile-card {
+  background-color: var(--color-accent2);
 }
