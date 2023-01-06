@@ -8,6 +8,7 @@
   --color-accent2: #cfe3f5;
   --color4: #363989;
   --color5: #2a3382;
+  --color6: #ae83fb;
 }
 
 body,
@@ -230,6 +231,25 @@ footer p a {
   justify-content: space-between;
   align-items: flex-end;
   padding: 2% 3% 3%;
+}
+
+.dropdown-item,
+.dropdown-menu {
+  background-color: var(--color-accent2);
+  color: var(--color-secondary);
+}
+
+.dropdown-item:hover {
+  color: var(--color-accent2);
+  text-decoration: none;
+  background-color: var(--color6);
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  color: var(--color-accent2);
+  text-decoration: none;
+  background-color: var(--color-primary);
 }
 
 .games-list {
