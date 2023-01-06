@@ -18,7 +18,7 @@
 </div>
 
 <section class="container-fluid intro">
-  <div class="row align-items-center">
+  <div class="row">
     <div class="col-6 intro-img-txt-container">
       <div class="img-container">
         <img
@@ -28,14 +28,18 @@
       </div>
       <br />
       <div class="intro-text">
+        <h2>PLACEHOLDER HEADING</h2>
       <p>Gaming can bring a lot of joy and excitement to people's lives. Whether it's playing a solo campaign or competing against others in an online match, the sense of accomplishment and enjoyment that comes from gaming is unparalleled. The escapism that gaming provides can also be a great stress reliever and provide a much-needed break from the daily grind. Additionally, gaming can foster a sense of community and connection with others, as people can come together and bond over their shared love of a particular game or series.</p>
       </div>
     </div>
 
-    <div class="container-fluid col-6 random-games-container">
+    <div class="container-fluid col-6 ">
+      <h3>Popular games</h3>
+      <div class="random-games-container">
       {{#each gameCardItems}}
         {{> randomGameCard this}}
       {{/each}}
+      </div>
     </div>
   </div>
 </section>
