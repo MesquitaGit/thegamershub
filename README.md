@@ -9,15 +9,7 @@ If you are in the main page, while logged out, you are able to view and search t
 While logged in, if you are normal user:
 
 - Add games to your favourites list
-- Add a rating and a review to a game
 - Access and edit your profile
-
-#### <ins> Optional feature </ins>
-
-If you sign up as a game developer you get the features of a normal user, plus you will also be able to:
-
-- Add games to the database
-- Edit the games that you added
 
 ## User Stories
 
