@@ -13,19 +13,50 @@
       </div>
 
       <div>
-        <a class="btn me-2 general-btn" href="{{game.website}}">Website</a>
-        <p><b>Playtime:</b> {{game.playtime}} hours</p>
-        <p><b>Release Date:</b> {{game.released}}</p>
-        <p><b>Metacritic Score:</b> {{game.metacritic}}</p>
-      </div>
+        <div class="game-details-btn-container">
+          <a class="btn me-2 general-btn" href="{{game.website}}">Website</a>
+          <form action="/favorites" method="post" style="margin:0">
+            <input
+              type="text"
+              name="name"
+              value="{{name}}"
+              style="display: none;"
+            />
+            <input
+              type="text"
+              name="apiId"
+              value="{{id}}"
+              style="display: none;"
+            />
+            <input
+              type="text"
+              name="backgroundImage"
+              value="{{background_image}}"
+              style="display: none;"
+            />
+            <button type="submit" class="btn general-btn"><i
+                class="bi bi-suit-heart"
+              ></i>
+              Add to Favorites</button>
+          </form>
+        </div>
 
-      <div>
-        <h6><b>Genres:</b></h6>
-        {{#each game.genres}}
-          <ul>
-            <li>{{name}}</li>
-          </ul>
-        {{/each}}
+        <div class="info-container">
+          <div>
+            <p><b>Playtime:</b> {{game.playtime}} hours</p>
+            <p><b>Release Date:</b> {{game.released}}</p>
+            <p><b>Metacritic Score:</b> {{game.metacritic}}</p>
+          </div>
+
+          <div>
+            <h6><b>Genres:</b></h6>
+            {{#each game.genres}}
+              <ul>
+                <li>{{name}}</li>
+              </ul>
+            {{/each}}
+          </div>
+        </div>
       </div>
     </div>
 
