@@ -60,6 +60,9 @@ nav {
   background-color: var(--color-primary);
 }
 
+.navbar-toggler-icon {
+  filter: invert(1);
+}
 /* Hero image styling */
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -531,6 +534,13 @@ footer p a:hover {
   align-items: inherit;
 }
 
+.fave-games-list .card-btn-container {
+  margin: 3%;
+}
+
+.fave-games-list h4 {
+  color: var(--color-accent);
+}
 /* About Us section */
 .about-us {
   width: 100%;

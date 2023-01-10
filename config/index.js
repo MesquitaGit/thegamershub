@@ -40,4 +40,8 @@ module.exports = (app) => {
   );
 
   app.use(setUser);
+  app.use((req, res, next) => {
+    res.locals.userIsConnected = req.session.currentUser ? true : false;
+    next();
+  });
 };

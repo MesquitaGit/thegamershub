@@ -5,26 +5,34 @@
 </div>
 
 <section class="container-fluid fave-games-list">
-  {{#each favorites}}
-    <div class="card game-card">
+  {{#if favorites}}
+    {{#each favorites}}
+      <div class="card game-card">
 
-      <img src="{{backgroundImage}}" class="card-img-top" alt="{{name}}" />
+        <img src="{{backgroundImage}}" class="card-img-top" alt="{{name}}" />
 
-      <div class="card-body">
-        <h5 class="card-title">{{name}}</h5>
+        <div class="card-body">
+          <h5 class="card-title">{{name}}</h5>
+        </div>
+
+        <div class="card-btn-container">
+          <a href="/games/game-details/{{apiId}}" class="btn general-btn">See
+            Details</a>
+          <form
+            action="/favorites/{{id}}/delete"
+            style="margin:0"
+            method="post"
+          >
+            <button type="submit" class="btn general-btn"><i
+                class="bi bi-heartbreak"
+              ></i>
+              Remove from Favorites</button>
+          </form>
+        </div>
+
       </div>
-
-      <div class="card-btn-container">
-        <a href="/games/game-details/{{apiId}}" class="btn general-btn">See
-          Details</a>
-        <form action="/favorites/{{id}}/delete" method="post">
-          <button type="submit" class="btn general-btn"><i
-              class="bi bi-heartbreak"
-            ></i>
-            Remove from Favorites</button>
-        </form>
-      </div>
-
-    </div>
-  {{/each}}
+    {{/each}}
+  {{else}}
+    <h4>No favorites yet... go add some!</h4>
+  {{/if}}
 </section>
