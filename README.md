@@ -24,11 +24,6 @@ While logged in, if you are normal user:
 - result - As a user I want to see the list of games and filter by my preferences.
 - game listing - As a user I want to see more details of the game, be able to leave a review and rating, and add it to my favourites list.
 
-#### <ins> Optional Game Dev Features </ins>
-
-- Add own games to the database
-- Edit the games they added
-
 ## Server Routes (Back-end)
 
 | Method |           Route            |                                                              Description |                                           Request - Body |
