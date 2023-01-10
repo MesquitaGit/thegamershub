@@ -35,7 +35,6 @@ router.get("/games/game-details/:id", async (req, res, next) => {
   const { id } = req.params;
   try {
     const singleGame = await apiService.getSingleGame(id);
-    console.log(singleGame.data);
     res.render("game-details", { game: singleGame.data });
   } catch (error) {
     next(error);

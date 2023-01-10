@@ -57,6 +57,7 @@ nav {
   min-height: 91vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--color-primary);
 }
 
 /* Hero image styling */
@@ -165,7 +166,7 @@ footer p a:hover {
 }
 
 /* Sign up and login styling */
-.submitSignupBtn {
+.submit-signup-btn {
   display: block;
   margin-left: auto;
   padding: 15px 30px;
@@ -178,12 +179,12 @@ footer p a:hover {
   margin-top: 30px;
 }
 
-.submitSignupBtn:hover {
+.submit-signup-btn:hover {
   background-color: var(--color6);
   transform: translateY(-2px);
 }
 
-.signupFrm {
+.signup-form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -203,12 +204,12 @@ footer p a:hover {
   box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
 }
 
-.signupTitle {
+.signup-title {
   font-size: 50px;
   margin-bottom: 50px;
 }
 
-.inputContainer {
+.input-container {
   position: relative;
   height: 45px;
   width: 90%;
@@ -347,24 +348,6 @@ footer p a:hover {
   padding: 2%;
 }
 
-.profile-section {
-  height: 84.6vh;
-}
-
-.hero-image-favorites-list {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://res.cloudinary.com/doti6zlah/image/upload/v1671280633/thegamershub/10_p0jdis.jpg");
-  height: 50vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  padding: 2%;
-}
-
 .pagination-section {
   background-color: var(--color-primary);
 }
@@ -386,6 +369,7 @@ footer p a:hover {
   background-color: var(--color6);
 }
 
+/* Game details styling */
 .game-details-main-container {
   height: 100%;
   padding-top: 3%;
@@ -439,8 +423,8 @@ footer p a:hover {
 }
 
 /* Profile page styling */
-
 .profile-section {
+  height: 100%;
   background-image: radial-gradient(
     circle,
     #3b2967,
@@ -456,14 +440,98 @@ footer p a:hover {
     #4b469e,
     #363989
   );
+  color: var(--color-accent2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
 }
 
 .profile-card {
   background-color: var(--color-accent2);
+  color: var(--color-primary);
+  margin: 1% 10%;
+  border-radius: 15px;
+}
+
+.user-info {
+  display: flex;
+  flex-grow: 1;
+}
+
+.profile-picture {
+  width: 100%;
+  padding: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.btn-and-edit-section {
+  width: 100%;
+  padding: 4%;
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+}
+
+.user-edit {
+  border: 2px solid var(--color-primary);
+  border-radius: 15px;
+  padding: 5% 3% 0% 3%;
+  margin-top: 2%;
+}
+
+.user-edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-edit-form > div {
+  margin-bottom: 4%;
+}
+
+.favorite-btn a {
+  display: block;
+  width: 100%;
+}
+
+/* Favorites section */
+.hero-image-favorites-list {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://res.cloudinary.com/doti6zlah/image/upload/v1671280633/thegamershub/10_p0jdis.jpg");
+  height: 50vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 2%;
+}
+
+.fave-games-list {
+  min-height: 30vh;
+  padding: 2% 2% 0.5%;
+  display: flex;
+  gap: 1%;
+  flex-wrap: wrap;
+  background-color: var(--color-primary);
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: inherit;
 }
 
 /* About Us section */
-
 .about-us {
   width: 100%;
   background-image: radial-gradient(
@@ -526,7 +594,6 @@ footer p a:hover {
 }
 
 /* Media queries */
-
 @media only screen and (max-width: 1120px) {
   .card.game-card,
   .container-about .card {
@@ -538,6 +605,10 @@ footer p a:hover {
   .card.game-card,
   .container-about .card {
     width: 48%;
+  }
+
+  .user-info {
+    flex-wrap: wrap;
   }
 }
 

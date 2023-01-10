@@ -1,7 +1,7 @@
-<div class="signupFrm" id="form">
+<div class="signup-form" id="form">
   <form action="/login" method="POST" class="form">
-    <h2 class="signupTitle">Login</h2>
-    <div class="inputContainer">
+    <h2 class="signup-title">Login</h2>
+    <div class="input-container">
       <input
         type="text"
         class="input"
@@ -12,13 +12,13 @@
         Username
       </label>
     </div>
-    <div class="inputContainer">
+    <div class="input-container">
       <input type="email" class="input" name="email" placeholder="Your email" />
       <label class="label">
         Email
       </label>
     </div>
-    <div class="inputContainer">
+    <div class="input-container">
       <input
         type="password"
         class="input"
@@ -29,7 +29,7 @@
         Password
       </label>
     </div>
-    <button type="submit" class="submitSignupBtn">Login</button>
+    <button type="submit" class="submit-signup-btn">Login</button>
 
     {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>

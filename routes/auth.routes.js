@@ -136,7 +136,6 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 
 router.get("/profile", isLoggedIn, (req, res, next) => {
   try {
-    console.log(res.locals);
     res.render("auth/profile");
   } catch (error) {
     next(error);
